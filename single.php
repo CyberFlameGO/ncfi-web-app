@@ -1,60 +1,44 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * The template for displaying all single posts and attachments
  *
  * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
  */
+ 
+get_header(); ?>
+    
+<section id="read" class="post">
 
-get_header();
-?>
+    <?php the_post(); ?>
+    <article id="post-<?php the_ID(); ?>" class="p">
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+        <h1 class="post-title">
+            <a href="<?php the_permalink() ?>#read" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+            <?php the_title(); ?>
+            </a>
+        </h1>
+        <time class="circle">
+            <div class="top"><?php echo get_the_date('M'); ?></div>
+            <div class="bottom"><?php echo  get_the_date('d'); ?></div>
+        </time>
 
-			<?php
+        <time class="line"><?php echo get_the_date('F j, Y'); ?></time>
+        
+        <hr class="fleuron indent">
+        <?php if(has_post_thumbnail()){
+            ?>
+            <figure><?php the_post_thumbnail(); ?></figure>
+            <?php
+        }
+        ?>
+        <?php the_content(); ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+        <hr class="fleuron">
 
-				get_template_part( 'template-parts/content/content', 'single' );
+    </article>
 
-				if ( is_singular( 'attachment' ) ) {
-					// Parent post navigation.
-					the_post_navigation(
-						array(
-							/* translators: %s: parent post link */
-							'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'twentynineteen' ), '%title' ),
-						)
-					);
-				} elseif ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					the_post_navigation(
-						array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'twentynineteen' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Next post:', 'twentynineteen' ) . '</span> <br/>' .
-								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'twentynineteen' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Previous post:', 'twentynineteen' ) . '</span> <br/>' .
-								'<span class="post-title">%title</span>',
-						)
-					);
-				}
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
-get_footer();
+</section>
+ 
+<?php get_footer(); ?>

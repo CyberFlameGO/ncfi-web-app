@@ -1,57 +1,21 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
- */
+    <footer>
+      <a class="logo" href="<?php echo get_site_url() ?>/"><img src="/wp-content/themes/ncfi-v1/images/logo-white.png" /></a>
+      <div class="bottom grid">
+        <div class="left grid-1-2">
+          <small>© 1998-2017 NCFI Polyurethanes. A Division of Barnhardt Manufacturing Co. All Rights Reserved.</small>
+        </div>
+        <div class="right grid-1-2">
+          <ul>
+            <li><a href="#" class="social-item facebook"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+            <li><a href="#" class="social-item twitter"><i class="fab fa-twitter-square"></i>Twitter</a></li>
+            <li><a href="#" class="social-item linkedin"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+            <li><a href="#" class="social-item instagram"><i class="fab fa-instagram"></i>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  <?php wp_footer(); ?>
 
-?>
-
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
-		<div class="site-info">
-			<?php $blog_info = get_bloginfo( 'name' ); ?>
-			<?php if ( ! empty( $blog_info ) ) : ?>
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
-				?>
-			</a>
-			<?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?>
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'twentynineteen' ); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'menu_class'     => 'footer-menu',
-							'depth'          => 1,
-						)
-					);
-					?>
-				</nav><!-- .footer-navigation -->
-			<?php endif; ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
+  <script src="https://kit.fontawesome.com/3f5a46caf6.js" crossorigin="anonymous"></script>
 
 </body>
-</html>

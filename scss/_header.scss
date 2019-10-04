@@ -1,0 +1,37 @@
+header{
+  background-color: white;
+  padding: 12px 0px 12px 0px;
+  //width: 100%;
+  div.wrapper{
+    max-width: 1140px;
+    margin: 0 auto;
+    a.logo{
+      display: inline-block;
+      margin-left: 20px;
+      img{
+        height: 45px;
+        padding: 30px 0px;
+      }
+    }
+    nav{
+      float: right;
+      ul{
+        list-style: none;
+        padding: 40px 0px;
+        margin: 0; 
+        li{
+          display: inline-block;
+          margin-right: 20px;
+          a{
+            color: #3f3f3f;
+            text-decoration: none;
+            font-size: 1.2em;
+            &:hover{
+              color: #0bbff3;
+            }
+          }
+        }
+      }
+    }
+  }  
+}
