@@ -1,0 +1,21 @@
+body.page-about{
+  div.hero{
+  	background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../images/hero/hero-about.jpg") no-repeat center 0px/100% auto;
+  	min-height: 482px;
+    max-height: 482px;
+  }
+  main{
+  	section{
+  		padding: 60px 0px;
+  		max-width: 780px;
+  		margin: 0 auto;
+  		h2{
+				margin: 30px 0px;
+  		}
+  		p{
+  			font-size: 0.8em;
+
+  		}
+  	}
+  }
+}

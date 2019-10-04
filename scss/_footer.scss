@@ -5,7 +5,7 @@ footer{
 		img{
 			height: 40px;
 			display: block;
-			margin: 0 auto 60px;
+			margin: 0 auto 80px;
 		}
 	}
 	div.bottom{
@@ -14,6 +14,7 @@ footer{
 		div.left{
 			small{
 				color: white;
+				font-size: 0.8em;
 			}
 		}
 		div.right{
@@ -28,9 +29,12 @@ footer{
           a{
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 0.8em;
             &:hover{
-              color: #d91c22;
+              color: $red;
+            }
+            i{
+            	padding-right: 8px;
             }
           }
         }

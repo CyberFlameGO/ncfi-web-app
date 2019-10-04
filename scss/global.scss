@@ -2,13 +2,16 @@
 //@import "normalize";
 
 @import "grids";
+@import "typography";
 
 @import "header";
 @import "footer";
 
 @import "products";
+@import "about";
+@import "contact";
 
 //global styles
 body{
-
+	margin: 0;
 }

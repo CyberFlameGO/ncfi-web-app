@@ -1,0 +1,59 @@
+//typography related colors
+$base-text: #3f3f3f;
+$red: #d91c22;
+$border: #979797;
+
+//Font-Stacks
+@font-face {
+  font-family: 'raleway-regular';
+  src: url('../fonts/raleway/raleway-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/raleway/raleway-regular.otf')  format('opentype'); /* Compatibility */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'raleway-italic';
+  src: url('../fonts/raleway/raleway-italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/raleway/raleway-italic.otf')  format('opentype'); /* Compatibility */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'raleway-bold';
+  src: url('../fonts/raleway/raleway-bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/raleway/raleway-bold.otf')  format('opentype'); /* Compatibility */
+  font-style: bold;
+}
+
+body{
+	font-size: 18px;
+  color: $base-text;
+  line-height: 1.8;
+  font-family: "raleway-regular", times, serif;
+}
+
+
+p{
+  margin: 0px auto; 
+}
+    
+.italic{
+  font-style: italic;
+}
+
+.link{
+	color: $red;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.section-title{
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1.1;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  font-family: "raleway-bold", times, serif;
+}

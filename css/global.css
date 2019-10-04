@@ -38,6 +38,47 @@
   width: 20%;
   float: left; }
 
+@font-face {
+  font-family: 'raleway-regular';
+  src: url("../fonts/raleway/raleway-regular.woff") format("woff"), url("../fonts/raleway/raleway-regular.otf") format("opentype");
+  /* Compatibility */
+  font-style: normal; }
+@font-face {
+  font-family: 'raleway-italic';
+  src: url("../fonts/raleway/raleway-italic.woff") format("woff"), url("../fonts/raleway/raleway-italic.otf") format("opentype");
+  /* Compatibility */
+  font-style: italic; }
+@font-face {
+  font-family: 'raleway-bold';
+  src: url("../fonts/raleway/raleway-bold.woff") format("woff"), url("../fonts/raleway/raleway-bold.otf") format("opentype");
+  /* Compatibility */
+  font-style: bold; }
+body {
+  font-size: 18px;
+  color: #3f3f3f;
+  line-height: 1.8;
+  font-family: "raleway-regular", times, serif; }
+
+p {
+  margin: 0px auto; }
+
+.italic {
+  font-style: italic; }
+
+.link {
+  color: #d91c22;
+  text-decoration: none; }
+  .link:hover {
+    text-decoration: underline; }
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1.1;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  font-family: "raleway-bold", times, serif; }
+
 header {
   background-color: white;
   padding: 12px 0px 12px 0px; }
@@ -61,8 +102,8 @@ header {
           margin-right: 20px; }
           header div.wrapper nav ul li a {
             color: #3f3f3f;
-            text-decoration: none;
-            font-size: 1.2em; }
+            text-transform: uppercase;
+            text-decoration: none; }
             header div.wrapper nav ul li a:hover {
               color: #0bbff3; }
 
@@ -72,12 +113,13 @@ footer {
   footer a.logo img {
     height: 40px;
     display: block;
-    margin: 0 auto 60px; }
+    margin: 0 auto 80px; }
   footer div.bottom {
     max-width: 1610px;
     margin: 0 auto; }
     footer div.bottom div.left small {
-      color: white; }
+      color: white;
+      font-size: 0.8em; }
     footer div.bottom div.right ul {
       float: right;
       list-style: none;
@@ -89,13 +131,36 @@ footer {
         footer div.bottom div.right ul li a {
           color: white;
           text-decoration: none;
-          font-size: 1.2em; }
+          font-size: 0.8em; }
           footer div.bottom div.right ul li a:hover {
             color: #d91c22; }
+          footer div.bottom div.right ul li a i {
+            padding-right: 8px; }
 
 body.page-products div.hero {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/hero/hero-home.jpg") no-repeat center 0px/100% auto;
   min-height: 786px;
   max-height: 786px; }
+
+body.page-about div.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/hero/hero-about.jpg") no-repeat center 0px/100% auto;
+  min-height: 482px;
+  max-height: 482px; }
+body.page-about main section {
+  padding: 60px 0px;
+  max-width: 780px;
+  margin: 0 auto; }
+  body.page-about main section h2 {
+    margin: 30px 0px; }
+  body.page-about main section p {
+    font-size: 0.8em; }
+
+body.page-contact div.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/hero/hero-contact.jpg") no-repeat center 0px/100% auto;
+  min-height: 480px;
+  max-height: 480px; }
+
+body {
+  margin: 0; }
 
 /*# sourceMappingURL=global.css.map */
