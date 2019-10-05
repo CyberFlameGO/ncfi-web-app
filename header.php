@@ -26,7 +26,17 @@
 				<ul>
 						<li><a href="<?php echo get_site_url() ?>/" class="menu-item">Products</a></li>
 						<li><a href="<?php echo get_site_url() ?>/about" class="menu-item">About</a></li>
-						<li><a href="<?php echo get_site_url() ?>/contact" class="menu-item">Contact</a></li>
+						<li><a href="<?php echo get_site_url() ?>/contact" class="menu-item">Contact</a></li>| 
+						<?php
+							if (is_user_logged_in()){ ?>
+								<li><a href="<?php echo get_site_url() ?>/account" class="menu-item">My Account</a></li> 
+								<li><a href="<?php echo wp_logout_url(get_permalink()); ?>" class="menu-item">Logout</a></li>
+								<?php
+							} else{ ?>
+								<li><a href="<?php echo wp_login_url( get_permalink() ); ?>" class="menu-item">Login</a></li>
+								<?php
+							}
+						?>
 				</ul>
 			</nav>
 		</div>

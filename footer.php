@@ -18,4 +18,9 @@
 
   <script src="https://kit.fontawesome.com/3f5a46caf6.js" crossorigin="anonymous"></script>
 
+  <script type="text/javascript">
+    var $ = jQuery.noConflict();
+    $( "#tab-description" ).addClass( "grid" );
+  </script>
+
 </body>

@@ -3,6 +3,7 @@
 
 @import "grids";
 @import "typography";
+@import "colors";
 
 @import "header";
 @import "footer";
@@ -11,7 +12,39 @@
 @import "about";
 @import "contact";
 
-//global styles
+@import "single-product";
+@import "woocommerce";
+
+//start global theme styles
 body{
 	margin: 0;
+	div.hero{
+		div.text{
+  		width: 100%;
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+  		margin-top: 120px;
+  		h1,h2{
+	  		color: white;
+	  	}
+	  	h1{
+	  		font-size: 2.5em;
+	  		margin: 0px 0px 10px 0px;
+	  		letter-spacing: 7px;
+	  		line-height: 0.9;
+	  		text-transform: uppercase;
+	  		text-align: center;
+	  	}
+	  	h2{	  		
+	  		font-size: 1em;
+	  		display: table;
+	  		margin: 0 auto;
+	  		line-height: 1.4;
+
+	  	}
+  	}
+	}
 }
+//end global theme styles

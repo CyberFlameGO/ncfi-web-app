@@ -109,7 +109,8 @@ header {
 
 footer {
   background: linear-gradient(45deg, #0ba6df 0%, #0f60a1 100%);
-  padding: 60px 0px 90px; }
+  padding: 60px 0px 90px;
+  margin-top: 60px; }
   footer a.logo img {
     height: 40px;
     display: block;
@@ -141,6 +142,21 @@ body.page-products div.hero {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/hero/hero-home.jpg") no-repeat center 0px/100% auto;
   min-height: 786px;
   max-height: 786px; }
+body.page-products main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 0px; }
+  body.page-products main div.text-wrap {
+    max-width: 800px;
+    margin: 0 auto; }
+    body.page-products main div.text-wrap h2 {
+      color: #d91c22;
+      text-transform: uppercase;
+      font-size: 2em;
+      margin-bottom: 10px; }
+    body.page-products main div.text-wrap p {
+      font-size: 0.9em;
+      margin-bottom: 60px; }
 
 body.page-about div.hero {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/hero/hero-about.jpg") no-repeat center 0px/100% auto;
@@ -160,7 +176,122 @@ body.page-contact div.hero {
   min-height: 480px;
   max-height: 480px; }
 
+body.single-product.product_cat_construction-foam div.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/products/banner-construction-foam.jpg") no-repeat center 0px/100% auto;
+  min-height: 484px;
+  max-height: 484px;
+  margin-bottom: 60px; }
+body.single-product main {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.content-area {
+  max-width: 1300px;
+  margin: 0 auto; }
+  .content-area .woocommerce-products-header {
+    color: #d91c22;
+    text-transform: uppercase; }
+
+.woocommerce .woocommerce-breadcrumb a {
+  color: #d91c22; }
+
+div.product div.product_meta {
+  margin-top: 20px;
+  font-size: 0.9em; }
+  div.product div.product_meta a {
+    color: #d91c22; }
+div.product div.woocommerce-product-gallery {
+  border: 1px solid #979797;
+  margin-bottom: 60px; }
+
+ul.products {
+  margin: 20px 0px; }
+  ul.products li.product {
+    margin-bottom: 0px; }
+    ul.products li.product a.woocommerce-loop-product__link img {
+      border: 1px solid #979797;
+      margin-bottom: 0px; }
+    ul.products li.product a.woocommerce-loop-product__link h2 {
+      color: #3f3f3f; }
+    ul.products li.product a.button {
+      display: none; }
+
+div.woocommerce-tabs div#tab-description {
+  margin-bottom: 0px; }
+  div.woocommerce-tabs div#tab-description p {
+    float: left;
+    width: 63.6%;
+    font-size: 0.8em; }
+  div.woocommerce-tabs div#tab-description div.product-docs {
+    float: right;
+    width: 33.3%;
+    background-color: #f8f8f8; }
+    div.woocommerce-tabs div#tab-description div.product-docs h1 {
+      color: white;
+      background-color: #112557;
+      font-size: 1em;
+      padding: 10px 10px 10px 20px;
+      text-transform: uppercase; }
+    div.woocommerce-tabs div#tab-description div.product-docs ul li {
+      list-style: none;
+      text-transform: uppercase;
+      font-size: 0.7em;
+      margin-bottom: 8px; }
+      div.woocommerce-tabs div#tab-description div.product-docs ul li:before {
+        content: "\f1c1";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: inherit;
+        margin-right: 6px;
+        color: #d91c22; }
+      div.woocommerce-tabs div#tab-description div.product-docs ul li a {
+        text-decoration: none;
+        color: #112557; }
+        div.woocommerce-tabs div#tab-description div.product-docs ul li a:hover {
+          color: #0bbff3; }
+    div.woocommerce-tabs div#tab-description div.product-docs ~ p {
+      float: none;
+      width: 100%; }
+      div.woocommerce-tabs div#tab-description div.product-docs ~ p img {
+        margin: 60px 0px; }
+
+section.related h2 {
+  color: #112557;
+  text-transform: uppercase; }
+section.related ul.products li.product {
+  margin-bottom: 0px; }
+  section.related ul.products li.product a.woocommerce-loop-product__link img {
+    border: 1px solid #979797;
+    margin-bottom: 0px; }
+  section.related ul.products li.product a.woocommerce-loop-product__link h2 {
+    color: #3f3f3f; }
+  section.related ul.products li.product a.button {
+    display: none; }
+
 body {
   margin: 0; }
+  body div.hero div.text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 120px; }
+    body div.hero div.text h1, body div.hero div.text h2 {
+      color: white; }
+    body div.hero div.text h1 {
+      font-size: 2.5em;
+      margin: 0px 0px 10px 0px;
+      letter-spacing: 7px;
+      line-height: 0.9;
+      text-transform: uppercase;
+      text-align: center; }
+    body div.hero div.text h2 {
+      font-size: 1em;
+      display: table;
+      margin: 0 auto;
+      line-height: 1.4; }
 
 /*# sourceMappingURL=global.css.map */

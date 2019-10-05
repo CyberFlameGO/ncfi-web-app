@@ -1,0 +1,133 @@
+//start woocommerce styles
+.content-area{
+	max-width: 1300px;
+	margin: 0 auto;
+	.woocommerce-products-header{
+		color: $red;
+		text-transform: uppercase;
+	}
+}
+.woocommerce{
+	.woocommerce-breadcrumb{
+		a{
+			color: $red;
+		}
+	}
+}
+
+div.product{
+	div.product_meta{
+		margin-top: 20px;
+		font-size: 0.9em;
+		a{
+			color: $red;
+		}
+	}
+	div.woocommerce-product-gallery{
+		border: 1px solid #979797;
+		margin-bottom: 60px;
+	}
+}
+
+ul.products{
+	margin: 20px 0px;
+	li.product{
+		margin-bottom: 0px;
+		a{
+	  	&.woocommerce-loop-product__link{
+	  		img{
+	  			border: 1px solid #979797;
+	  			margin-bottom: 0px;
+	  		}
+	  		h2{
+	  			color: $base-text;
+	  		}
+	  	}
+	  	&.button{
+	  		display: none;
+	  	}
+  	}
+	}
+}
+
+div.woocommerce-tabs{
+  div#tab-description{
+  	margin-bottom: 0px;
+  	p{
+			float: left;
+			width: 63.6%;//<66 for right-gutter
+			font-size: 0.8em;
+		}
+  	div.product-docs{
+			float: right;
+			width: 33.3%;
+			background-color: $offset;
+			h1{
+				color: white;
+				background-color: $darkBlue;
+				font-size: 1em;
+				padding: 10px 10px 10px 20px;
+				text-transform: uppercase;
+			}
+			ul{
+				li{
+					list-style: none;
+					text-transform: uppercase;
+					font-size: 0.7em;
+					margin-bottom: 8px;
+					&:before{
+						content: "\f1c1";//pdf icon
+						font-family: FontAwesome;
+					  font-weight: normal;
+					  font-style: normal;
+					  display: inline-block;
+					  text-decoration: inherit;
+					  margin-right: 6px;
+					  color: $red;
+					}
+					a{
+						text-decoration: none;
+						color: $darkBlue;
+						&:hover{
+							color: $hover;
+						}
+					}
+				}
+			}
+			&~p{
+				float: none;
+				width: 100%;
+				img{
+		  		margin: 60px 0px;
+		  	}
+			}
+  	}
+  }
+}
+
+section.related{
+	h2{
+		color: $darkBlue;
+		text-transform: uppercase;
+	}
+	ul.products{
+  	li.product{
+  		margin-bottom: 0px;
+  		a{
+		  	&.woocommerce-loop-product__link{
+		  		img{
+		  			border: 1px solid #979797;
+		  			margin-bottom: 0px;
+		  		}
+		  		h2{
+		  			color: $base-text;
+		  		}
+		  	}
+		  	&.button{
+		  		display: none;
+		  	}
+	  	}
+  	}
+  }
+}
+//end woocommerce styles

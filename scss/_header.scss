@@ -27,7 +27,7 @@ header{
             text-transform: uppercase;
             text-decoration: none;
             &:hover{
-              color: #0bbff3;
+              color: $hover;
             }
           }
         }

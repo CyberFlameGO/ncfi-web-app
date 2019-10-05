@@ -19,6 +19,10 @@ add_theme_support( 'post-thumbnails' );
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
+//disable empty <p> tags
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop', 99 );
+add_filter( 'the_content', 'shortcode_unautop', 100 );
 
 
 
@@ -61,5 +65,118 @@ function cz_register_post_type() {
         ),
         'taxonomies' => array('category', 'post_tag')
     ));
+}
+
+
+//shortcodes
+function ncfi_product_docs_shortcode( $atts , $content = null ) {
+    return ' <div class="product-docs"><h1>tech specs</h1>'.do_shortcode($content).'</div>';
+}
+add_shortcode( 'ncfi_product_docs', 'ncfi_product_docs_shortcode' );
+
+function ncfi_calculations_shortcode( $atts , $content = null ) {
+    return '
+        <div class="product-docs">
+        
+        </div>'
+    ;
+}
+add_shortcode( 'ncfi_calculations', 'ncfi_calculations_shortcode' );
+
+function mytheme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+add_action('woocommerce_checkout_create_order_line_item', 'change_order_line_item_quantity', 10, 4 );
+function change_order_line_item_quantity( $item, $cart_item_key, $cart_item, $order ) {
+    // Your code goes below
+
+    // Get order item quantity
+    $quantity = $item->get_quantity();
+
+    $new_qty = $quantity + 2;
+
+    // Update order item quantity
+    $item->set_quantity( $new_qty );
+}
+
+//force disable woocommerce product reviews (even if enabled in wp-admin)
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+    function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
+
+//woocommerce order calculation product tab
+add_filter( 'woocommerce_product_tabs', 'ncfi_product_order_calculation_tab' );
+function ncfi_product_order_calculation_tab( $tabs ) {
+    // Add the new tab
+    $tabs['calculate_tab'] = array(
+        'title'       => __( 'Order Calculator', 'text-domain' ),
+        'priority'    => 50,
+        'callback'    => 'ncfi_product_order_calculation_tab_content'
+    );
+    return $tabs;
+}
+
+function ncfi_product_order_calculation_tab_content() {
+    ?>
+        <div class="calculator-wrap">
+            <form id="calculator">
+                <label for="length">Length</label>
+                <input type="text" id="length" step="1" min="1" max="" value="0" pattern="[0-9]*" inputmode="numeric">
+
+                <label for="width">Width</label>
+                <input type="text" id="width" step="1" min="1" max="" value="0" pattern="[0-9]*" inputmode="numeric">
+
+                <input type="button" onClick="calculateSQFootage()" Value="Calculate Square Footage" />
+
+                <div>Square Footage: <span id="result"></span></div>
+                
+            </form>
+        </div>
+        <script type="text/javascript">
+            function calculateSQFootage(){
+                num1 = document.getElementById("length").value;
+                num2 = document.getElementById("width").value;
+                document.getElementById("result").innerHTML = num1 * num2;
+            }
+        </script>
+    <?php
+    // The new tab content
+    //echo 'Order Calculator<br>';
+    //echo 'Insert backend php calc here.';         
+}
+
+
+//rename woocommerce default tabs
+add_filter( 'woocommerce_product_tabs', 'ncfi_rename_wc_tabs', 98 );
+function ncfi_rename_wc_tabs( $tabs ) {
+    $tabs['description']['title']               = __( 'Product Information', 'text-domain' );       // Rename the description tab
+    return $tabs;
+}
+
+add_filter( 'body_class', 'ncfi_wc_product_css_body_class' );
+ 
+//add body class = wc_product_cat
+function ncfi_wc_product_css_body_class( $classes ){
+  if( is_singular( 'product' ) )
+  {
+    $custom_terms = get_the_terms(0, 'product_cat');
+    if ($custom_terms) {
+      foreach ($custom_terms as $custom_term) {
+        $classes[] = 'product_cat_' . $custom_term->slug;
+      }
+    }
+  }
+  return $classes;
+}
+
+//remove description heading from single-product content
+// Remove the product description Title
+add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
+function remove_product_description_heading() {
+ return '';
 }
 ?>
