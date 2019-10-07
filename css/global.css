@@ -195,6 +195,11 @@ body.single-product main {
 .woocommerce .woocommerce-breadcrumb a {
   color: #d91c22; }
 
+div.product p.price span.amount:after {
+  content: " per unit";
+  color: #3f3f3f; }
+div.product form.cart {
+  display: none; }
 div.product div.product_meta {
   margin-top: 20px;
   font-size: 0.9em; }
@@ -212,6 +217,9 @@ ul.products {
       border: 1px solid #979797;
       margin-bottom: 0px; }
     ul.products li.product a.woocommerce-loop-product__link h2 {
+      color: #3f3f3f; }
+    ul.products li.product a.woocommerce-loop-product__link span.price span.amount:after {
+      content: " per unit";
       color: #3f3f3f; }
     ul.products li.product a.button {
       display: none; }

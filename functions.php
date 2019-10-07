@@ -121,6 +121,7 @@ function ncfi_product_order_calculation_tab( $tabs ) {
 }
 
 function ncfi_product_order_calculation_tab_content() {
+
     ?>
         <div class="calculator-wrap">
             <form id="calculator">
@@ -133,6 +134,28 @@ function ncfi_product_order_calculation_tab_content() {
                 <input type="button" onClick="calculateSQFootage()" Value="Calculate Square Footage" />
 
                 <div>Square Footage: <span id="result"></span></div>
+                <input type="text" id="sq-footage" step="1" min="1" max="" value="0" pattern="[0-9]*" inputmode="numeric">
+
+                <?php
+                    $isInsulated = false;
+                    $isRoof = false;
+                    $orderQuantity = 1;
+    
+                    if( has_term( array( 'Insulation Foam'), 'product_cat', get_the_ID() ) ) {
+                        $isInsulated = true;
+                        echo '<p>Insulated foam: true</p>';
+                    } else{
+                        echo '<p>Insulated foam: false</p>';
+                    }
+
+                    if( has_term( array( 'Roof Foam'), 'product_cat', get_the_ID() ) ) {
+                        $isRoof = true;
+                        echo '<p>Roof foam: true</p>';
+                    } else{
+                        echo '<p>Roof foam: false</p>';
+                    }
+                ?>
+                <a href="<?php echo get_site_url(); ?>/?add-to-cart=<?php echo get_the_ID(); ?>&quantity=<?php echo $orderQuantity; ?>">Add to Cart</a>
                 
             </form>
         </div>
@@ -141,12 +164,10 @@ function ncfi_product_order_calculation_tab_content() {
                 num1 = document.getElementById("length").value;
                 num2 = document.getElementById("width").value;
                 document.getElementById("result").innerHTML = num1 * num2;
+                document.getElementById("sq-footage").value = num1 * num2;
             }
         </script>
-    <?php
-    // The new tab content
-    //echo 'Order Calculator<br>';
-    //echo 'Insert backend php calc here.';         
+    <?php       
 }
 
 

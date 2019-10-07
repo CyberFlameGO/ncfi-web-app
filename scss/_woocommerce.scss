@@ -16,6 +16,17 @@
 }
 
 div.product{
+	p.price{
+		span.amount{
+			&:after{
+				content: " per unit";
+				color: $base-text;
+			}
+		}
+	}
+	form.cart{
+		display: none;
+	}
 	div.product_meta{
 		margin-top: 20px;
 		font-size: 0.9em;
@@ -42,6 +53,14 @@ ul.products{
 	  		h2{
 	  			color: $base-text;
 	  		}
+	  		span.price{
+					span.amount{
+						&:after{
+							content: " per unit";
+							color: $base-text;
+						}
+					}
+				}
 	  	}
 	  	&.button{
 	  		display: none;

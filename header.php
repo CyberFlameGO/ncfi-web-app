@@ -29,7 +29,8 @@
 						<li><a href="<?php echo get_site_url() ?>/contact" class="menu-item">Contact</a></li>| 
 						<?php
 							if (is_user_logged_in()){ ?>
-								<li><a href="<?php echo get_site_url() ?>/account" class="menu-item">My Account</a></li> 
+								<li><a href="<?php echo get_site_url() ?>/account" class="menu-item">My Account</a></li>
+								<li><a href="<?php echo get_site_url() ?>/cart" class="menu-item">View Cart</a></li>
 								<li><a href="<?php echo wp_logout_url(get_permalink()); ?>" class="menu-item">Logout</a></li>
 								<?php
 							} else{ ?>
